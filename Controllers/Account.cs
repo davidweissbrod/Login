@@ -17,16 +17,21 @@ public class Account : Controller{
     }
 
     public IActionResult Login(){
+        ViewBag.inicioSesion = BD.IniciarSesion();
         return View("login");
     }
 
-    public IActionResult CambiarContraseña(Usuario user, string nueva){
-        ViewBag.nuevaContraseña = BD.CambiarContraseña(user, nueva);
+    public IActionResult CambiarContraseña(string nueva){
+        ViewBag.nuevaContraseña = BD.CambiarContraseña(nueva);
         return View("olvide");
     }
 
     public IActionResult Registro(Usuario user){
         ViewBag.nuevoUsuario = BD.AñadirUsuario(user);
         return View("registro");
+    }
+
+    public IActionResult Bienvenida(){
+        return View("bienvenida");
     }
 }
