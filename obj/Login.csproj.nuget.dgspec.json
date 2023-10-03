@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "Z:\\programacion\\Login\\Login.csproj": {}
+    "Z:\\Login\\Login.csproj": {}
   },
   "projects": {
-    "Z:\\programacion\\Login\\Login.csproj": {
+    "Z:\\Login\\Login.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\programacion\\Login\\Login.csproj",
+        "projectUniqueName": "Z:\\Login\\Login.csproj",
         "projectName": "Login",
-        "projectPath": "Z:\\programacion\\Login\\Login.csproj",
-        "packagesPath": "C:\\Users\\47436755\\.nuget\\packages\\",
-        "outputPath": "Z:\\programacion\\Login\\obj\\",
+        "projectPath": "Z:\\Login\\Login.csproj",
+        "packagesPath": "C:\\Users\\47392150\\.nuget\\packages\\",
+        "outputPath": "Z:\\Login\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\47436755\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\47392150\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -46,7 +46,7 @@
           "dependencies": {
             "Dapper": {
               "target": "Package",
-              "version": "[2.0.151, )"
+              "version": "[2.1.4, )"
             },
             "System.Data.SqlClient": {
               "target": "Package",

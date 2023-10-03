@@ -23,3 +23,13 @@ function mayus(contraseña){
     }
     return false;
 }
+
+function validacionCompleta(){
+    if(!largoContraseña() && !caracterEspecial() && !mayus()){
+        prompt("Ingrese de nuevo la contraseña");
+        return false;
+    }
+    else{
+        return true;
+    }
+}

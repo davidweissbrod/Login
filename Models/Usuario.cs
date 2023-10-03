@@ -14,4 +14,8 @@ public class Usuario{
         apellido = ap;
         mail = Mail;
     }
+
+    public Usuario(int idUs, string user, string contra, string nom, string ap, string Mail){
+
+    }
 }
