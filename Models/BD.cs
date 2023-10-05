@@ -4,6 +4,14 @@ using Dapper;
 public class BD{
     private static string _connectionString = @"Server=localhost; DataBase=LoginBD; Trusted_Connection = True;";
 
+    public static List<Usuario> LevantarUsuarios(){
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+            string sql = "SELECT * FROM Usuarios";
+            listaUsuarios = db.Query<Usuario>(sql).ToList();
+        }
+        return listaUsuarios;
+    }
+
     public static Usuario IniciarSesion(int idUs){
         Usuario us = null;
         using(SqlConnection db = new SqlConnection(_connectionString)){

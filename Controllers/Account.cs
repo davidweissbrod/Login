@@ -16,29 +16,38 @@ public class Account : Controller{
         return View("Index");
     }
 
-    public IActionResult Login(int id){
-        ViewBag.inicioSesion = BD.IniciarSesion(id);
+    
+    public IActionResult Login(string name, string contra){
+        List<Usuario> listaUsuarios = BD.LevantarUsuarios();
+        Usuario user = listaUsuarios.FirstOrDefault(us => us.username == name);
+        if(user.contraseña == contra){
+            return RedirectToAction("Bienvenida");
+        }
+        else{
+            ViewBag.ErrorContraseña = "Contraseña Incorrecta";
+        }
         return View("login");
     }
-
-    public IActionResult NuevoUsuario(Usuario us){
-        ViewBag.Username = us.username;
-        ViewBag.Nombre = us.nombre;
-        ViewBag.Apellido = us.apellido;
-        ViewBag.mail = us.mail;
-        return View("registro");
     }
+
     public IActionResult CambiarContraseña(string nueva){
         ViewBag.nuevaContraseña = BD.CambiarContraseña(nueva);
         return View("olvide");
     }
 
-    public IActionResult Registro(Usuario user){
-        ViewBag.nuevoUsuario = BD.AñadirUsuario(user);
+    public IActionResult Registro(string username, string contraseña, string nombre, string apellido, string mail){
+        Usuario us = new Usuario(username, contraseña, nombre, apellido, mail);
+        BD.AñadirUsuario(us);
         return RedirectToAction("NuevoUsuario(user)");
     }
 
-    public IActionResult Bienvenida(){
+    public IActionResult Bienvenida(Usuario user){
+        ViewBag.UsuarioLogueado = user;
         return View("bienvenida");
     }
-}
+
+    public IActionResult SobreNosotros(){
+        return View("nosotros");
+    }
+
+   
